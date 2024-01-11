@@ -1,27 +1,29 @@
-<!-- App.vue -->
 <template>
-  <div id="app">
-    <!-- 使用全局组件 -->
-    <MyGlobalComponent></MyGlobalComponent>
-    <!-- 使用局部组件 -->
-    <MyLocalComponent></MyLocalComponent>
-    <HelloWorld />
-    <ParentComponent></ParentComponent>
+  <div>
+    <p>当前计数：{{ count }}</p>
+    <button @click="increment">增加计数</button>
   </div>
 </template>
 
 <script>
-// 引入并注册局部组件
-import HelloWorld from './components/HelloWorld.vue';
-import MyLocalComponent from './components/MyLocalComponent.vue';
-import ParentComponent from './components/ParentComponent.vue';
+import { ref, watch } from 'vue';
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld,
-    MyLocalComponent,
-    ParentComponent
+  setup() {
+    const count = ref(0);
+
+    function increment() {
+      count.value++;
+    }
+
+    watch(count, (newValue, oldValue) => {
+      console.log(`计数从 ${oldValue} 变为 ${newValue}`);
+    });
+
+    return {
+      count,
+      increment
+    };
   }
 };
 </script>

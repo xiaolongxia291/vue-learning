@@ -1,10 +1,11 @@
 import { createApp } from 'vue';
-import App from './App.vue';
+// import App from './App.vue';
+// const app = createApp(App);
 
-const app = createApp(App);
+// import MyCounter from './components/MyCounter.vue'
+// const app = createApp(MyCounter);
 
-// 注册全局组件
-import MyGlobalComponent from './components/MyGlobalComponent.vue';
-app.component('MyGlobalComponent', MyGlobalComponent);
+import ClickCom from './components/ClickCom.vue'
+const app = createApp(ClickCom);
 
 app.mount('#app');
