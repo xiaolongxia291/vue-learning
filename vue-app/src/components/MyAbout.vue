@@ -1,16 +1,16 @@
 <!-- components/HelloWorld.vue -->
 <template>
-  <div class="hello">
+  <div class="about">
     <h1>{{ msg }}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'MyAbout',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'About'
     };
   }
 };
